@@ -1,0 +1,88 @@
+<div class="ef-intro">
+    <p class="hint">{{localize "EFFECTFEATURES.TabHint"}}</p>
+</div>
+
+{{#if editable}}
+<div class="ef-actions">
+    {{#each buttons}}
+    <button type="button" class="ef-add-btn" data-ef-add="{{this.type}}">
+        <i class="{{this.icon}}" inert></i>
+        <span>{{this.label}}</span>
+    </button>
+    {{/each}}
+</div>
+{{/if}}
+
+<div class="ef-dropzone {{#unless hasGrants}}empty{{/unless}}">
+    {{#if hasGrants}}
+    <ol class="ef-grant-list">
+        {{#each grants}}
+        <li class="ef-grant" data-grant-id="{{this.id}}" data-grant-type="{{this.type}}">
+            <div class="ef-grant-header">
+                <img class="ef-grant-img" src="{{this.img}}" alt="{{this.name}}" />
+                <div class="ef-grant-info">
+                    <span class="ef-grant-name">{{this.name}}</span>
+                    <span class="ef-grant-type">{{this.typeLabel}}</span>
+                </div>
+                <div class="ef-grant-controls">
+                    {{#if ../editable}}
+                    <a class="ef-grant-control" data-ef-action="edit"
+                       data-tooltip="EFFECTFEATURES.EditItem"
+                       aria-label="{{localize 'EFFECTFEATURES.EditItem'}}">
+                        <i class="fa-solid fa-pen-to-square" inert></i>
+                    </a>
+                    <a class="ef-grant-control" data-ef-action="delete"
+                       data-tooltip="EFFECTFEATURES.RemoveItem"
+                       aria-label="{{localize 'EFFECTFEATURES.RemoveItem'}}">
+                        <i class="fa-solid fa-trash" inert></i>
+                    </a>
+                    {{else}}
+                    <a class="ef-grant-control" data-ef-action="view"
+                       data-tooltip="EFFECTFEATURES.ViewItem"
+                       aria-label="{{localize 'EFFECTFEATURES.ViewItem'}}">
+                        <i class="fa-solid fa-eye" inert></i>
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+
+            {{#if this.isSpell}}
+            <div class="ef-grant-options">
+                <label class="ef-option">
+                    <span>{{localize "EFFECTFEATURES.Spell.Method"}}</span>
+                    <select data-ef-field="system.method" {{#unless ../editable}}disabled{{/unless}}>
+                        {{#each this.spell.methods}}
+                        <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+                <label class="ef-option">
+                    <span>{{localize "EFFECTFEATURES.Spell.PreparedLabel"}}</span>
+                    <select data-ef-field="system.prepared" data-ef-type="number"
+                            {{#unless ../editable}}disabled{{/unless}}>
+                        {{#each this.spell.prepared}}
+                        <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+                <label class="ef-option">
+                    <span>{{localize "EFFECTFEATURES.Spell.Level"}}</span>
+                    <select data-ef-field="system.level" data-ef-type="number"
+                            {{#unless ../editable}}disabled{{/unless}}>
+                        {{#each this.spell.levels}}
+                        <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+            </div>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ol>
+    {{else}}
+    <p class="ef-empty">
+        <i class="fa-solid fa-wand-magic-sparkles" inert></i>
+        {{localize "EFFECTFEATURES.EmptyHint"}}
+    </p>
+    {{/if}}
+</div>

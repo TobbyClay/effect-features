@@ -1,0 +1,25 @@
+{
+  "EFFECTFEATURES.TabLabel": "Features",
+  "EFFECTFEATURES.TabHint": "Items listed here are added to the actor's sheet while this effect is active, and removed automatically when it is disabled, expires, or is deleted. Edit an item to create a custom version of it.",
+  "EFFECTFEATURES.EmptyHint": "Drag a feature or spell here, or use the buttons above.",
+  "EFFECTFEATURES.AddFeature": "Add a Feature",
+  "EFFECTFEATURES.CastSpell": "Cast a Spell",
+  "EFFECTFEATURES.AddItem": "Add Item…",
+  "EFFECTFEATURES.ViewItem": "View Item",
+  "EFFECTFEATURES.EditItem": "Edit this copy",
+  "EFFECTFEATURES.RemoveItem": "Remove",
+
+  "EFFECTFEATURES.Spell.Method": "Method",
+  "EFFECTFEATURES.Spell.MethodDefault": "Default",
+  "EFFECTFEATURES.Spell.Level": "Level",
+  "EFFECTFEATURES.Spell.PreparedLabel": "Preparation",
+  "EFFECTFEATURES.Spell.Prepared.0": "Not Prepared",
+  "EFFECTFEATURES.Spell.Prepared.1": "Prepared",
+  "EFFECTFEATURES.Spell.Prepared.2": "Always Prepared",
+
+  "EFFECTFEATURES.Notify.Added": "Effect Features: added \"{name}\".",
+  "EFFECTFEATURES.Warning.NoBrowser": "The dnd5e Compendium Browser is unavailable. Drag an item onto the tab instead.",
+  "EFFECTFEATURES.Warning.NotAnItem": "Only Items (features, spells, equipment…) can be granted.",
+  "EFFECTFEATURES.Warning.EditFailed": "Could not open this item for editing.",
+  "EFFECTFEATURES.Warning.CannotDeleteGranted": "This item is granted by an active effect. Disable or remove the effect to remove it."
+}

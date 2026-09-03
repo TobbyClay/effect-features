@@ -1,0 +1,46 @@
+{
+  "id": "effect-features",
+  "title": "Effect Features",
+  "description": "Grant features and spells to a D&D 5e character's sheet for as long as an Active Effect is active. Adds a 'Features' tab to the effect configuration where you can 'Add a Feature' or 'Cast a Spell', mirroring the Activities workflow.",
+  "version": "0.2.1",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Victor Boeira",
+      "email": "victorboeira@gmail.com"
+    }
+  ],
+  "esmodules": [
+    "scripts/module.mjs"
+  ],
+  "styles": [
+    "styles/effect-features.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.0.0"
+        }
+      }
+    ]
+  },
+  "flags": {
+    "effect-features": {
+      "grantsFlag": "grants"
+    }
+  }
+}
